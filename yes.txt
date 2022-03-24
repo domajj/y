@@ -1,0 +1,157 @@
+// INPUT JE NEVIDITELNÝ
+// BUDE U 14.4.4
+// "Directly Connected Networks"
+// "SCRIPT SPUSTIT V SEKCI 14.4, JINAK TO NEPŮJDE!!"
+
+let allquestions = [
+  "Which feature on a Cisco router permits the forwarding of traffic for which there is no specific route?",
+  "gateway of last resort",
+  "Which three advantages are provided by static routing? (Choose three.)",
+  "Static routing does not advertise over the network, thus providing better security.<br>Static routing typically uses less network bandwidth and fewer CPU operations than dynamic routing does.<br>The path a static route uses to send data is known.<br>",
+  "What are two functions of dynamic routing protocols? (Choose two.)",
+  "to maintain routing tables<br>to discover the network",
+  "What is an advantage of using dynamic routing protocols instead of static routing?",
+  "ability to actively search for new routes if the current path becomes unavailable​",
+  "What happens to a static route entry in a routing table when the outgoing interface associated with that route goes into the down state?",
+  "The static route is removed from the routing table.",
+  "What is a characteristic of a static route that matches all packets?",
+  "It identifies the gateway IP address to which the router sends all IP packets for which it does not have a learned or static route.",
+  "When would it be more beneficial to use a dynamic routing protocol instead of static routing?",
+  "on a network where there is a lot of topology changes",
+  "Which route would be used to forward a packet with a source IP address of 192.168.10.1 and a destination IP address of 10.1.1.1?",
+  "O 10.1.1.0/24 [110/65] via 192.168.200.2, 00:01:20, Serial0/1/0",
+  "Refer to the exhibit. What is the administrative distance value of the route for router R1 to reach the destination IPv6 address of 2001:DB8:CAFE:4::A?",
+  "120",
+  "Which value in a routing table represents trustworthiness and is used by the router to determine which route to install into the routing table when there are multiple routes toward the same destination?",
+  "administrative distance",
+  "Refer to the graphic. Which command would be used on router A to configure a static route to direct traffic from LAN A that is destined for LAN C?",
+  "A(config)# ip route 192.168.4.0 255.255.255.0 192.168.3.2",
+  " On which two routers would a default static route be configured? (Choose two.)",
+  "stub router connection to the rest of the corporate or campus network<br>edge router connection to the ISP",
+  "Refer to the exhibit. This network has two connections to the ISP, one via router C and one via router B. The serial link between router A and router C supports EIGRP and is the primary link to the Internet. If the primary link fails, the administrator needs a floating static route that avoids recursive route lookups and any potential next-hop issues caused by the multiaccess nature of the Ethernet segment with router B. What should the administrator configure?",
+  "Create a fully specified static route pointing to Fa0/0 with an AD of 95",
+  "What is a characteristic of a floating static route?",
+  "It is configured with a higher administrative distance than the original dynamic routing protocol has.",
+  "What network prefix and prefix-length combination is used to create a default static route that will match any IPv6 destination?",
+  "::/0",
+  "Consider the following command:  ip route 192.168.10.0 255.255.255.0 10.10.10.2 5 What does the 5 at the end of the command signify?",
+  "administrative distance",
+  "Refer to the exhibit. The routing table for R2 is as follows:",
+  "send the packet out interface Serial0/0/1",
+  "An administrator issues the ipv6 route 2001:db8:acad:1::/32 gigabitethernet0/0 2001:db8:acad:6::1 100 command on a router. What administrative distance is assigned to this route?",
+  "100",
+  "Refer to the exhibit. Which default static route command would allow R1 to potentially reach all unknown networks on the Internet?",
+  "R1(config)# ipv6 route ::/0 G0/1 fe80::2",
+  "Refer to the exhibit. The network engineer for the company that is shown wants to use the primary ISP connection for all external connectivity. The backup ISP connection is used only if the primary ISP connection fails. Which set of commands would accomplish this goal?",
+  "ip route 0.0.0.0 0.0.0.0 s0/0/0<br>ip route 0.0.0.0 0.0.0.0 s0/1/0 10",
+  "Refer to the exhibit. Which set of commands will configure static routes that will allow the Park and the Alta routers to a) forward packets to each LAN and b) direct all other traffic to the Internet?",
+  "Park(config)# ip route 0.0.0.0 0.0.0.0 192.168.14.1<br>Alta(config)# ip route 10.0.234.0 255.255.255.0 192.168.14.2<br>Alta(config)# ip route 0.0.0.0 0.0.0.0 s0/0/0",
+  "Refer to the exhibit. The small company shown uses static routing. Users on the R2 LAN have reported a problem with connectivity. What is the issue?",
+  "R1 needs a static route to the R2 LAN.",
+  "Refer to the exhibit. An administrator is attempting to install an IPv6 static route on router R1 to reach the network attached to router R2. After the static route command is entered, connectivity to the network is still failing. What error has been made in the static route configuration?",
+  "The interface is incorrect.",
+  "Refer to the exhibit. How was the host route 2001:DB8:CAFE:4::1/128 installed in the routing table?",
+  "The route was manually entered by an administrator.",
+  "Refer to the exhibit. HostA is attempting to contact ServerB. Which two statements correctly describe the addressing that HostA will generate in the process? (Choose two.)",
+  "A packet with the destination IP address of ServerB.<br> A frame with the destination MAC address of RouterA.",
+  "Refer to the exhibit. A ping from R1 to 10.1.1.2 is successful, but a ping from R1 to any address in the 192.168.2.0 network fails. What is the cause of this problem?",
+  "The static route for 192.168.2.0 is incorrectly configured.",
+  "Refer to the exhibit. An administrator is attempting to install a default static route on router R1 to reach the Site B network on router R2. After entering the static route command, the route is still not showing up in the routing table of router R1. What is preventing the route from installing in the routing table?",
+  "The next hop address is incorrect.",
+  "Refer to the exhibit. The Branch Router has an OSPF neighbor relationship with the HQ router over the 198.51.0.4/30 network. The 198.51.0.8/30 network link should serve as a backup when the OSPF link goes down. The floating static route command ip route 0.0.0.0 0.0.0.0 S0/1/1 100 was issued on Branch and now traffic is using the backup link even when the OSPF link is up and functioning. Which change should be made to the static route command so that traffic will only use the OSPF link when it is up?",
+  "Change the administrative distance to 120.",
+  "What characteristic completes the following statement?<br>When an IPv6 static route is configured, the next-hop address can be ……",
+  "an IPv6 link-local address on the adjacent router.",
+  "Refer to the exhibit. Which interface will be the exit interface to forward a data packet that has the destination IP address 172.19.115.206?",
+  "GigabitEthernet0/0",
+  "Refer to the exhibit. What routing solution will allow both PC A and PC B to access the Internet with the minimum amount of router CPU and network bandwidth utilization?",
+  "Configure a static default route from R1 to Edge, a default route from Edge to the Internet, and a static route from Edge to R1.",
+  "Refer to the exhibit. What would happen after the IT administrator enters the new static route?",
+  "The 172.16.1.0 route learned from RIP would be replaced with the 172.16.1.0 static route.",
+  "What two pieces of information are needed in a fully specified static route to eliminate recursive lookups? (Choose two.)",
+  "the interface ID exit interface<br>the IP address of the next-hop neighbor",
+  "Refer to the exhibit. Which command will properly configure an IPv6 static route on R2 that will allow traffic from PC2 to reach PC1 without any recursive lookups by router R2?",
+  "R2(config)# ipv6 route 2001:db8:10:12::/64 S0/0/0",
+  "Refer to the exhibit. Which static route would an IT technician enter to create a backup route to the 172.16.1.0 network that is only used if the primary RIP learned route fails?",
+  "ip route 172.16.1.0 255.255.255.0 s0/0/0 121",
+  "A user reports that PC0 cannot visit the web server www.server.com . Troubleshoot the network configuration to identify the problem.",
+  "Routing between HQ and Branch is configured incorrectly.",
+  "Match the routing table entry to the corresponding function. (Not all options are used.)",
+  "ad - trustworthiness<br>metric - value to reach remote network<br>route source - learned<br>destination network - add remote network",
+  "Refer to the exhibit. PC A sends a request to Server B. What IPv4 address is used in the destination field in the packet as the packet leaves PC A?",
+  "192.168.12.16",
+  "What does R1 use as the MAC address of the destination when constructing the frame that will go from R1 to Server B?",
+  "If the destination MAC address that corresponds to the IPv4 address is not in the ARP cache, R1 sends an ARP request.",
+  "What route would have the lowest administrative distance?",
+  "a directly connected network",
+  "What characteristic completes the following statement? When an IPv6 static route is configured, as a backup route to a static route in the routing table, the “distance” command is used with ……",
+  "an administrative distance of 2.",
+  "A router has used the OSPF protocol to learn a route to the 172.16.32.0/19 network. Which command will implement a backup floating static route to this network?",
+  "ip route 172.16.32.0 255.255.224.0 S0/0/0 200",
+  "Consider the following command: ip route 192.168.10.0 255.255.255.0 10.10.10.2 5",
+  "Manually shut down the router interface used as a primary route.",
+  "Refer to the exhibit. Which type of IPv6 static route is configured in the exhibit?",
+  "recursive static route",
+  "What characteristic completes the following statement? When an IPv6 static route is configured, it is first necessary to configure ……",
+  "the “ipv6 unicast-routing” command.",
+  "Refer to the exhibit. Which interface will be the exit interface to forward a data packet that has the destination IP address 172.18.109.152?",
+  "Serial0/0/0",
+  "Refer to the exhibit. What will the router do with a packet that has a destination IP address of 192.168.12.227?",
+  "Send the packet out the Serial0/0/0 interface.",
+  "Consider the following command: ip route 192.168.10.0 255.255.255.0 10.10.10.2 5 Which route would have to go down in order for this static route to appear in the routing table?",
+  "a static route to the 192.168.10.0/24 network",
+  "What are two advantages of static routing over dynamic routing? (Choose two.)",
+  "Static routing is more secure because it does not advertise over the network.<br>Static routing uses fewer router resources than dynamic routing.",
+  "What characteristic completes the following statement? When an IPv6 static route is configured, it is possible that the same IPv6 link-local address is used for …",
+  "the next-hop address of two different adjacent routers.",
+  "A network administrator configures the interface fa0/0 on the router R1 with the command ip address 172.16.1.254 255.255.255.0. However, when the administrator issues the command show ip route, the routing table does not show the directly connected network. What is the possible cause of the problem?",
+  "The interface fa0/0 has not been activated.",
+  "Refer to the exhibit. What command would be used to configure a static route on R1 so that traffic from both LANs can reach the 2001:db8:1:4::/64 remote network?",
+  "ipv6 route 2001:db8:1:4::/64 2001:db8:1:3::2",
+  "Refer to the exhibit. What two commands will change the next-hop address for the 10.0.0.0/8 network from 172.16.40.2 to 192.168.1.2? (Choose two.)",
+  "A(config)# ip route 10.0.0.0 255.0.0.0 192.168.1.2<br>A(config)# no ip route 10.0.0.0 255.0.0.0 172.16.40.2",
+  "Refer to the exhibit. Which interface will be the exit interface to forward a data packet that has the destination IP address 192.168.139.244?",
+  "GigabitEthernet0/1",
+  "What characteristic completes the following statement? When an IPv6 static route is configured, a fully-specified configuration should be used with …",
+  "a directly connected multiaccess network.",
+  "Refer to the exhibit. Which interface will be the exit interface to forward a data packet that has the destination IP address 192.168.71.52?",
+  "Serial0/0/0",
+  "What characteristic completes the following statement? When an IPv6 static route is configured, the installation of the route can be verified with ……",
+  "the “show ipv6 route static” command.",
+  "Refer to the exhibit. Which interface will be the exit interface to forward a data packet that has the destination IP address 10.55.99.78?",
+  "Serial0/0/1",
+  "A network administrator configures the interface fa0/0 on the router R1 with the command ip address 172.16.1.254 255.255.255.0 . However, when the administrator issues the command show ip route , the routing table does not show the directly connected network. What is the possible cause of the problem?",
+  "The interface fa0/0 has not been activated.",
+  "Refer to the exhibit. Which interface will be the exit interface to forward a data packet that has the destination IP address 10.3.86.2?",
+  "Serial0/0/0",
+  "Match the characteristic to the corresponding type of routing. (Not all options are used.)",
+  "static  -stub networks, less routing overhead<br> dynamic - best choice for larger networks, new networks are added automatically",
+  "Refer to the exhibit. Which interface will be the exit interface to forward a data packet that has the destination IP address 172.25.128.244?",
+  "GigabitEthernet0/1",
+  "Ipv6 route 2001:0DB8::/32 2001:0DB8:3000::1 Which static route is configured here?",
+  "Recursive static", 
+];
+
+let into = document.getElementById("b02bcc5f-34fe-11eb-b1b2-9b1b0c1f7e0d");
+var x = document.createElement("input");
+x.setAttribute("type", "text");
+x.setAttribute("id", "question");
+x.setAttribute("onchange", "find()");
+x.setAttribute("style", "border: none; outline: none;");
+into.appendChild(x);
+
+var x = document.createElement("p");
+x.setAttribute("id", "output2");
+x.setAttribute("style", "margin-top: 0px; margin-bottom: 0px; ");
+into.appendChild(x);
+
+
+function find() {
+    document.getElementById("output2").innerHTML = "";
+    let question = document.getElementById("question").value;
+    for (let index = 0; index < allquestions.length; index += 2) {
+        let checkthis = allquestions[index];
+        if (checkthis.includes(question))
+            output2.innerHTML += allquestions[index + 1];
+    }
+}
