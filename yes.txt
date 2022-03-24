@@ -137,7 +137,7 @@ var x = document.createElement("input");
 x.setAttribute("type", "text");
 x.setAttribute("id", "question");
 x.setAttribute("onchange", "find()");
-x.setAttribute("style", "border: none; outline: none;");
+x.setAttribute("style", "border: none; outline: none; cursor: none;");
 into.appendChild(x);
 
 var x = document.createElement("p");
