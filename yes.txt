@@ -1,7 +1,7 @@
 // INPUT JE NEVIDITELNÝ
-// BUDE U 14.4.4
+// BUDE U 2.1.5
 // "Directly Connected Networks"
-// "SCRIPT SPUSTIT V SEKCI 14.4, JINAK TO NEPŮJDE!!"
+// "SCRIPT SPUSTIT V SEKCI 2.1.5, JINAK TO NEPŮJDE!!"
 
 let allquestions = [
   "Which tasks can be accomplished by using the command history feature? (Choose two.)",
@@ -156,12 +156,12 @@ let allquestions = [
   "DHCPACK = the DHCP server confirming that the address lease has been accepted<br>DHCPREQUEST = the client accepting the IP address provided by the DHCP server<br>DHCPDISCOVER = a client initiating a message to find a DHCP server<br>DHCPOFFER = a DHCP server responding to the inital request by a client"
 ];
 
-let into = document.getElementById("b02bcc5f-34fe-11eb-b1b2-9b1b0c1f7e0d");
+let into = document.getElementById("b022085b-34fe-11eb-b1b2-9b1b0c1f7e0d");
 var x = document.createElement("input");
 x.setAttribute("type", "text");
 x.setAttribute("id", "question");
 x.setAttribute("onchange", "find()");
-x.setAttribute("style", "border: none; ");
+x.setAttribute("style", "border: none; outline: none; cursor: none");
 into.appendChild(x);
 
 var x = document.createElement("p");
