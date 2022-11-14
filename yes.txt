@@ -41,7 +41,7 @@ let allquestions = [
   "Which statement is true about DHCP operation?",
   "When a device that is configured to use DHCP boots, the client broadcasts a DHCPDISCOVER message to identify any available DHCP servers on the network.",
   "Order the DHCP message types as they would occur between a DHCP client and a DHCP server.",
-  "DISCOVER, OFFER, REQ, ACK",
+  "DISCOVER identify any dhcp, OFFER to offer a lease, REQ used to ident, ACK finalize",
   "A network administrator configures a router to send RA messages with M flag as 0 and O flag as 1. Which statement describes the effect of this configuration when a PC tries to configure its IPv6 address?",
   "It should use the information that is contained in the RA message and contact a DHCPv6 server for additional information.",
   "Refer to the exhibit. What should be done to allow PC-A to receive an IPv6 address from the DHCPv6 server?",
