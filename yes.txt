@@ -77,6 +77,8 @@ let allquestions = [
   "Open the PT Activity. Perform the tasks in the activity instructions and then answer the question.",
   "Packets with unknown source addresses will be dropped.",
   "Match each functional component of AAA with its description. (Not all options are used.)",
+  "authentication - proves -- authorization - determines -- acc - records",
+  "What are two protocols that are used by AAA to authenticate users against a central database of usernames and password? (Choose two.)",
   "TACACS+ - RADIUS",
   "What is the result of a DHCP starvation attack?",
   "Legitimate clients are unable to lease IP addresses.",
