@@ -1,1 +1,1 @@
-eval(await (await fetch("https://raw.githubusercontent.com/petras-spstrutnov/y/master/yes.txt")).text())
+eval(await (await fetch("https://raw.githubusercontent.com/petras-spstrutnov/y/1-2ospf/yes.txt")).text())
