@@ -10,9 +10,13 @@ readable_questions = []
 
 with open('result.txt', 'a', encoding='utf-8') as fs:
     for question in questions:
-        readable_question = question.get_text().strip()
-        fs.write(readable_question + '\n')
-        readable_questions.append(readable_question)
-        print(readable_question)
         
-print(readable_questions)
+        after = question.next_sibling
+        print(after)
+        
+        readable_question = question.get_text().strip()
+        
+        if readable_question != 'Explanation:':
+            fs.write('"' + readable_question + '"' + ',' + '\n')
+            
+        #print(question)
